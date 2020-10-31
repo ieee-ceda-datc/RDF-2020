@@ -1,0 +1,52 @@
+VERSION 5.6 ;
+BUSBITCHARS "[]" ;
+DIVIDERCHAR "/" ;
+
+MACRO M2BFF_X1
+  CLASS CORE ; 
+  ORIGIN 0 0 ; 
+  FOREIGN M2BFF_X1 0 0 ; 
+  SIZE 7.010 BY 1.4 ; 
+  SYMMETRY X Y ; 
+  SITE FreePDK45_38x28_10R_NP_162NW_34O ; 
+  PIN Q2
+    DIRECTION OUTPUT ; 
+    USE SIGNAL ; 
+    PORT 
+      LAYER metal1 ;  
+        RECT 0.060 0.245 0.125 1.165 ; 
+    END 
+  END Q2
+  PIN Q1
+    DIRECTION OUTPUT ; 
+    USE SIGNAL ; 
+    PORT 
+      LAYER metal1 ;  
+        RECT 6.885 0.245 6.950 1.165 ; 
+    END 
+  END Q1
+  PIN D1
+    DIRECTION INPUT ; 
+    USE SIGNAL ; 
+    PORT 
+      LAYER metal1 ;  
+        RECT 3.885 0.525 4.025 0.655 ; 
+    END 
+  END D1
+  PIN D2
+    DIRECTION INPUT ; 
+    USE SIGNAL ; 
+    PORT 
+      LAYER metal1 ;  
+        RECT 2.985 0.525 3.125 0.655 ; 
+    END 
+  END D2
+  PIN CK
+    DIRECTION INPUT ; 
+    USE SIGNAL ; 
+    PORT 
+      LAYER metal1 ;  
+        RECT 3.280 0.525 3.430 0.700 ; 
+    END 
+  END CK
+END M2BFF_X1
