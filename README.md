@@ -102,7 +102,7 @@ flow:
 In the flow configuration, the `design` attribute specifies the design configuration file path; the `library` attribute specifies the path to the library configuration file.
 
 
-#### Running Integrated OpenROAD Tool
+#### Integrated OpenROAD Tool Flow
 
 In the RDF-2020 release, the single-app OpenROAD tool is now part of the DATC RDF. The noteworthy aspects of the single-app OpenROAD tool is that:
 
@@ -112,6 +112,19 @@ In the RDF-2020 release, the single-app OpenROAD tool is now part of the DATC RD
 To try out the integrated OpenROAD tool, we recommend you to refer to the latest OpenROAD flow script in the following repository:
 
 * **OpenROAD Flow**:  https://github.com/The-OpenROAD-Project/OpenROAD-flow-scripts
+
+
+#### Multi-Bit Flip Flop (MBFF) Flow
+
+DATC RDF flow can be configured to perform a MBFF clustering stage after placement. It clusters flip-flops in the given placement and generates MBFF- mapped netlist and DEF. The goal is to minimize clock power by reducing the number of clock sinks and thereby the total sink pin capacitance. The following two flip-flop clustering algorithms have been added into the RDF-2020 flow.
+
+* **FlopTray**: A. B. Kahng, J. Li, and L. Wang, "Improved flop tray-based design implementation for power reduction," Proc. ICCAD, Nov. 2018, pp. 1–8.
+
+
+* **Effective Mean-Shift Clustering**: Y. Chang, T.-W. Lin, I. H.-R. Jiang, and G.-J. Nam, "Graceful register clustering by effective mean shift algorithm for power and timing balancing" in Proc. ISPD, Apr, 2019, pp. 11–18. ([GitHub](https://github.com/waynelin567/Register_Clustering])
+
+
+The OpenROAD tool included in DATC RDF can support both MBFF clustering algorithsm. We included the example OpenROAD Tcl scripts for [FlopTray](./bin/mbff_clustering/flop-tray/run_openroad_flop_tray.tcl) and [Mean-Shift Clustering](./bin/mbff_clustering/mean-shift/run_openroad_mean_shift.tcl).
 
 
 
